@@ -9,3 +9,66 @@
 4. Sepengetahuan saya design pattern itu seperti solusi dari permasalahan-permasalahan umum yang sering kali terjadi dalam pengembangan suatu software atau aplikasi. Untuk sampai sekarang saya belum pernah menggunakan design pattern dalam pengembangan suatu web application.
 
 5. Ya saya bersedia, jika memang harus remote untuk komunikasi dan kolaborasi pengerjaan project kita dapat menggunakan aplikasi task management seperti Trello lalu pembagin tugas nya di bagi se-efisien mungkin, dan mungkin setiap hari atau beberapa waktu sekali mengadakan meet untuk dapat berkomunikasi, berdiskusi ataupun progress sementara pengerjaan project.
+
+
+# Cara Instalasi/Run
+
+-   Clone repository ini
+
+```sh
+$ git clone https://github.com/LinggaWahyu/Kakatoo-Backend-Engineer-Practical-Test.git
+```
+
+-   Masuk ke dalam lokasi folder aplikasi
+
+```sh
+$ cd Kakatoo-Backend-Engineer-Practical-Test/kakatoo-backend-engineer-practical-test/
+```
+
+-   Install dependencies dengan menjalankan perintah
+
+```sh
+$ composer install
+```
+
+- Lalu jalankan perintah
+
+```sh
+$ npm install && npm run dev
+```
+
+-   Buat file .env dengan berdasarkan file .env.example
+
+```sh
+$ cp .env.example .env
+```
+
+-   Setelah berhasil membuat file .env, beirkutnya jalankan perintah
+
+```sh
+$ php artisan key:generate
+```
+
+-   Buat database baru dengan nama **kakatoo_backend_engineer_practical_test**
+
+-   Setelah selesai membuat database, jalankan perintah berikut
+
+```sh
+$ php artisan migrate
+```
+
+-   Terakhir, untuk membukanya di web browser, jalankan perintah
+
+```sh
+$ php artisan serve
+```
+
+-   Lalu jalankan http://localhost:8000
+
+-   Register akun terlebih dahulu melalui API untuk menjalankan aplikasi
+
+# Screenshoot Web Page **List of Activities**
+![screenshoot-1](/Screenshoot/Login_Page.png?raw=true "Login Page")
+![screenshoot-2](/Screenshoot/Home_Page.png?raw=true "Home Page")
+![screenshoot-3](/Screenshoot/List_of_Particpan_Modal.png?raw=true "List of Participan Modal")
+![screenshoot-3](/Screenshoot/Logout_modal.png?raw=true "Logout Modal")
