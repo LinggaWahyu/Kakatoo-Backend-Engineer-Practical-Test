@@ -70,5 +70,5 @@ $ php artisan serve
 # Screenshoot Web Page **List of Activities**
 ![screenshoot-1](/Screenshoot/Login_Page.png?raw=true "Login Page")
 ![screenshoot-2](/Screenshoot/Home_Page.png?raw=true "Home Page")
-![screenshoot-3](/Screenshoot/List_of_Particpan_Modal.png?raw=true "List of Participan Modal")
+![screenshoot-3](/Screenshoot/List_of_Participan_Modal.png?raw=true "List of Participan Modal")
 ![screenshoot-3](/Screenshoot/Logout_modal.png?raw=true "Logout Modal")
