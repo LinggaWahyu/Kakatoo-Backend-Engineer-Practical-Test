@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div v-if="activities.length != 0" class="col-12 mb-4">
+            <div v-if="auth" class="col-12 mb-4">
+                <h5>Trainer Home Page</h5>
                 <button
                     ref="logout"
                     @click="logout"
@@ -146,13 +147,54 @@ export default {
     data() {
         return {
             activities: [],
-            skill_id: null
+            skill_id: null,
+            auth: false
         };
     },
     mounted() {
+        this.checkUser();
         this.getListActivities();
     },
     methods: {
+        async checkUser() {
+            try {
+                let response = await axios.get("/api/auth/user", {
+                    headers: {
+                        Authorization: this.$route.query.token
+                    }
+                });
+
+                if (response.status == 200) {
+                    if (response.data.profile == "trainer") {
+                        this.auth = true;
+                    } else {
+                        this.auth = false;
+
+                        this.$toasted.show(
+                            `You don't have access to that page`,
+                            {
+                                type: "error",
+                                duration: 5000
+                            }
+                        );
+
+                        this.$router.push({
+                            path: `/${response.data.profile}/home`,
+                            query: { token: this.$route.query.token }
+                        });
+                    }
+                }
+            } catch (error) {
+                this.$toasted.show(`You must login to access this page`, {
+                    type: "error",
+                    duration: 5000
+                });
+
+                this.$router.push({
+                    path: "/"
+                });
+            }
+        },
         async getListActivities() {
             let response = await axios.get("/api/auth/user", {
                 headers: {

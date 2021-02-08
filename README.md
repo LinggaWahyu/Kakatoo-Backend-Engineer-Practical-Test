@@ -71,4 +71,19 @@ $ php artisan serve
 ![screenshoot-1](/Screenshoot/Login_Page.png?raw=true "Login Page")
 ![screenshoot-2](/Screenshoot/Home_Page.png?raw=true "Home Page")
 ![screenshoot-3](/Screenshoot/List_of_Participan_Modal.png?raw=true "List of Participan Modal")
-![screenshoot-3](/Screenshoot/Logout_modal.png?raw=true "Logout Modal")
+![screenshoot-4](/Screenshoot/Logout_modal.png?raw=true "Logout Modal")
+
+- Trainer Home Page
+![screenshoot-6](/Screenshoot/Trainer_Home.png?raw=true "Trainer Home Page")
+
+- Board Home Page (Register User)
+![screenshoot-5](/Screenshoot/Board_Home.png?raw=true "Board Home Page (Register User)")
+
+- Expert Home Page 
+![screenshoot-7](/Screenshoot/Expert_Home.png?raw=true "Expert Home Page")
+
+- Expert Create Activity
+![screenshoot-8](/Screenshoot/Expert_Create_Activity.png?raw=true "Expert Create Activity")
+
+- Expert Edit Activity
+![screenshoot-9](/Screenshoot/Expert_Edit_Activity.png?raw=true "Expert Edit Activity")

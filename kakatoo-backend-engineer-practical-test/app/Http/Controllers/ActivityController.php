@@ -154,4 +154,40 @@ class ActivityController extends Controller
             'message' => 'update success'
         ]);
     }
+
+    public function show($id)
+    {
+        $activity = Activity::find($id);
+
+        return response($activity);
+    }
+
+    public function getAll()
+    {
+        $activities = Activity::get();
+
+        $output = array();
+        foreach ($activities as $key=> $activity) {
+            $output[$key]['id'] = $activity->id;
+            $output[$key]['skill_id'] = $activity->skill->id;
+            $output[$key]['skill_name'] = $activity->skill->name;
+            $output[$key]['title'] = $activity->title;
+            $output[$key]['description'] = $activity->description;
+            $output[$key]['startdate'] = date_format($activity->startdate, "d F Y");
+            $output[$key]['enddate'] = date_format($activity->enddate, "d F Y");
+            $output[$key]['participans'] = array();
+
+            foreach ($activity->participans as $key_participan => $participan) {
+                $output[$key]['participans'][$key_participan]['id'] = $participan;
+
+                $user = User::with('profile', 'skill')->find($participan);
+
+                $output[$key]['participans'][$key_participan]['name'] = $user->name;
+                $output[$key]['participans'][$key_participan]['profile'] = $user->profile->name;
+                $output[$key]['participans'][$key_participan]['skill'] = $user->skill->name;
+            }
+        }
+
+        return response($output);
+    }
 }

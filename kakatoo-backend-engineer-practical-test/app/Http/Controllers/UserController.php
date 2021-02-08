@@ -11,6 +11,13 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
+    public function index($skill_id)
+    {
+        $users = User::where('skill_id', $skill_id)->get();
+
+        return response($users);
+    }
+
     public function login(Request $request) 
     {
         $rules = [
@@ -73,7 +80,7 @@ class UserController extends Controller
             'username' => 'required|string|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'profile_id' => 'required|integer|exists:App\Models\Profile,id',
-            'skill' => 'integer|nullable|exists:App\Models\Skill,id'
+            'skill' => 'nullable|exists:App\Models\Skill,id'
         ];
 
         $data = $request->all();
@@ -105,7 +112,8 @@ class UserController extends Controller
         unset($user->updated_at);
 
         return response()->json([
-            'data' => $user
+            'data' => $user,
+            'profile' => $user->profile->name
         ]);
     }
 

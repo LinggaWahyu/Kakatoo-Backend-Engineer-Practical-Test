@@ -24,6 +24,12 @@ Route::group([
     Route::get('/activities/{skill_id}', [App\Http\Controllers\ActivityController::class, 'index'])->name('activity-list');
 
     Route::get('/skills', [App\Http\Controllers\SkillController::class, 'index'])->name('skill-list');
+
+    Route::get('/profiles', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile-list');
+
+    Route::get('/activities', [App\Http\Controllers\ActivityController::class, 'getAll'])->name('activity-list');
+
+    Route::get('/users/{skill_id}', [App\Http\Controllers\UserController::class, 'index'])->name('user-list-by-skill_id');
 });
 
 Route::group([
@@ -39,5 +45,6 @@ Route::group([
     Route::post('/', [App\Http\Controllers\ActivityController::class, 'store'])->name('activity-create');
     Route::put('/{id}', [App\Http\Controllers\ActivityController::class, 'update'])->name('activity-update');
     Route::delete('/{id}', [App\Http\Controllers\ActivityController::class, 'destroy'])->name('activity-delete');
+    Route::get('/{id}', [App\Http\Controllers\ActivityController::class, 'show'])->name('activity-detail');
 });
 

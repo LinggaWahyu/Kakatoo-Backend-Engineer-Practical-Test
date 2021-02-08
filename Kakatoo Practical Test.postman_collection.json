@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\" : \"User B\",\n    \"password\" : \"user1234\"\n}",
+					"raw": "{\n    \"username\" : \"Board A\",\n    \"password\" : \"board123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -411,13 +411,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "EPXRZUK9XRHUPLJCXTTF8OQET4DWYP",
+						"value": "WDLZAUZ5FY9IFNWU9FK5XQ3R3W5OTQ",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"User B\",\n    \"email\" : \"userb@gmail.com\",\n    \"username\" : \"User B\",\n    \"password\" : \"user1234\",\n    \"password_confirmation\" : \"user1234\",\n    \"profile_id\" : 2\n}",
+					"raw": "{\n    \"name\" : \"Trainer B\",\n    \"email\" : \"trainerb@gmail.com\",\n    \"username\" : \"Trainer B\",\n    \"password\" : \"trainer123\",\n    \"password_confirmation\" : \"trainer123\",\n    \"profile_id\" : 3,\n    \"skill_id\" : \"\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1980,7 +1980,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "PTLHHQFWGYUZ0VEZTZU7YACKGGW3QX",
+						"value": "FF7QQGRCXVQDFDBOCLFV7DPXGDIUSN",
 						"type": "text"
 					}
 				],
@@ -2076,7 +2076,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"User B\",\n        \"email\": \"userb@gmail.com\",\n        \"username\": \"User B\",\n        \"profile_id\": 2,\n        \"skill_id\": 1\n    }\n}"
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Board A\",\n        \"email\": \"boarda@gmail.com\",\n        \"username\": \"Board A\",\n        \"profile_id\": 1,\n        \"skill_id\": null,\n        \"profile\": {\n            \"id\": 1,\n            \"name\": \"board\",\n            \"created_at\": \"2021-02-07 03:02:30\",\n            \"updated_at\": \"2021-02-07 03:02:30\"\n        }\n    },\n    \"profile\": \"board\"\n}"
 				},
 				{
 					"name": "Get Data Login User Error Auth",
@@ -2153,6 +2153,430 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"message\": \"Unauthorized user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get List of Profiles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "FF7QQGRCXVQDFDBOCLFV7DPXGDIUSN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profiles",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profiles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get List of Profiles Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "FF7QQGRCXVQDFDBOCLFV7DPXGDIUSN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/profiles",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"profiles"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 06:48:17 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 06:48:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"board\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"expert\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"trainer\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"competitor\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Activities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OGEPV2UWB6UQADKIECU23IOFGD2ZWZ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/activities",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"activities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Activities Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "TKILW0DZ8WZJKACYP3NWFS2AQSFHLR",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activities"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 08:01:13 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 08:01:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"skill_id\": 1,\n        \"skill_name\": \"coding\",\n        \"title\": \"Belajar Coding\",\n        \"description\": \"Belajar membuat website dengan menggunakan framework laravel 8\",\n        \"startdate\": \"07 February 2020\",\n        \"enddate\": \"09 February 2020\",\n        \"participans\": [\n            {\n                \"id\": 5,\n                \"name\": \"User A\",\n                \"profile\": \"competitor\",\n                \"skill\": \"coding\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"User B\",\n                \"profile\": \"competitor\",\n                \"skill\": \"coding\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"skill_id\": 1,\n        \"skill_name\": \"coding\",\n        \"title\": \"Belajar Web\",\n        \"description\": \"Belajar membuat website dengan menggunakan framework code igniter\",\n        \"startdate\": \"08 February 2020\",\n        \"enddate\": \"10 February 2020\",\n        \"participans\": [\n            {\n                \"id\": 5,\n                \"name\": \"User A\",\n                \"profile\": \"competitor\",\n                \"skill\": \"coding\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"User B\",\n                \"profile\": \"competitor\",\n                \"skill\": \"coding\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Users by Skill Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "PSNZEOMXQPD4F95B3MXJNBWNZFDGFD",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Users by Skill Id Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "PSNZEOMXQPD4F95B3MXJNBWNZFDGFD",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 09:43:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 09:43:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"name\": \"User A\",\n        \"email\": \"usera@gmail.com\",\n        \"username\": \"User A\",\n        \"profile_id\": 4,\n        \"skill_id\": 1,\n        \"api_token\": null,\n        \"created_at\": \"2021-02-07 03:02:52\",\n        \"updated_at\": \"2021-02-07 03:02:52\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"User B\",\n        \"email\": \"userb@gmail.com\",\n        \"username\": \"User B\",\n        \"profile_id\": 4,\n        \"skill_id\": 1,\n        \"api_token\": null,\n        \"created_at\": \"2021-02-07 03:02:03\",\n        \"updated_at\": \"2021-02-08 07:02:56\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Trainer A\",\n        \"email\": \"trainera@gmail.com\",\n        \"username\": \"Trainer A\",\n        \"profile_id\": 3,\n        \"skill_id\": 1,\n        \"api_token\": null,\n        \"created_at\": \"2021-02-08 05:02:16\",\n        \"updated_at\": \"2021-02-08 08:02:20\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Activity by Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "YVCXVJURK6XW8AA4NCKIF6NEUEMPQV",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/activity/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"activity",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Activity by Id Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "YVCXVJURK6XW8AA4NCKIF6NEUEMPQV",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activity/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activity",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 10:13:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 10:13:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"skill_id\": 1,\n    \"title\": \"Belajar Coding\",\n    \"description\": \"Belajar membuat website dengan menggunakan framework laravel 8\",\n    \"startdate\": \"2020-02-07 00:02:00\",\n    \"enddate\": \"2020-02-09 00:02:00\",\n    \"participans\": [\n        5,\n        6\n    ],\n    \"created_at\": \"2021-02-07 03:02:42\",\n    \"updated_at\": \"2021-02-07 03:02:35\"\n}"
 				}
 			]
 		}

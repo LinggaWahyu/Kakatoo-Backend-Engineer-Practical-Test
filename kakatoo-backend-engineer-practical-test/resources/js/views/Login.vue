@@ -70,10 +70,27 @@ export default {
                         duration: 5000
                     });
 
-                    this.$router.push({
-                        path: "home",
-                        query: { token: response.data.token }
-                    });
+                    if (response.data.profile == "competitor") {
+                        this.$router.push({
+                            path: "/competitor/home",
+                            query: { token: response.data.token }
+                        });
+                    } else if (response.data.profile == "trainer") {
+                        this.$router.push({
+                            path: "/trainer/home",
+                            query: { token: response.data.token }
+                        });
+                    } else if (response.data.profile == "board") {
+                        this.$router.push({
+                            path: "/board/home",
+                            query: { token: response.data.token }
+                        });
+                    } else if (response.data.profile == "expert") {
+                        this.$router.push({
+                            path: "/expert/home",
+                            query: { token: response.data.token }
+                        });
+                    }
                 }
             } catch (e) {
                 this.loading = false;

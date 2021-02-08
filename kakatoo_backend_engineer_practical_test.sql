@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 07 Feb 2021 pada 07.25
+-- Waktu pembuatan: 08 Feb 2021 pada 12.09
 -- Versi server: 10.4.11-MariaDB-log
 -- Versi PHP: 7.4.2
 
@@ -45,8 +45,9 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`id`, `skill_id`, `title`, `description`, `startdate`, `enddate`, `participans`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Belajar Coding', 'Belajar membuat website dengan menggunakan framework laravel 8', '2020-02-07 00:00:00', '2020-02-09 00:00:00', '[5,6]', '2021-02-06 20:46:42', '2021-02-06 20:52:35'),
-(4, 1, 'Belajar Web', 'Belajar membuat website dengan menggunakan framework code igniter', '2020-02-08 00:00:00', '2020-02-10 00:00:00', '[5,6]', '2021-02-06 21:32:38', '2021-02-06 21:32:38');
+(2, 1, 'Belajar Coding', 'Belajar membuat website dengan menggunakan framework laravel 8', '2020-02-07 00:00:00', '2020-02-09 00:00:00', '[5,6]', '2021-02-06 20:46:42', '2021-02-08 04:05:46'),
+(4, 1, 'Belajar Web', 'Belajar membuat website dengan menggunakan framework code igniter', '2020-02-08 00:00:00', '2020-02-10 00:00:00', '[5,6]', '2021-02-06 21:32:38', '2021-02-06 21:32:38'),
+(5, 2, 'Belajar Desain Grafis 1', 'Belajar desain grafis menggunakan aplikasi Adobe Photoshop', '2021-02-08 00:00:00', '2021-02-10 00:00:00', '[13]', '2021-02-08 03:08:59', '2021-02-08 03:46:37');
 
 -- --------------------------------------------------------
 
@@ -139,10 +140,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `profile_id`, `skill_id`, `api_token`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Board A', 'boarda@gmail.com', 'Board A', '$2y$10$YVO8Ary1o1LCjXYTKee6WOgg9H4j34baoLYdIKokha.0Q5CCiFjii', 1, NULL, '93adcea94f200ae3d3ca8d9830e5c2e9d99f8c82b26fe1136dda0b40b7d44bf3', NULL, '2021-02-06 20:11:33', '2021-02-06 20:13:12'),
-(4, 'Expert A', 'experta@gmail.com', 'Expert A', '$2y$10$1Gk7U.cnJDOvEP4bByyAjuFJXlvqGOilYAuzI5S45IrDCN83VfXRu', 2, NULL, 'c5f79abc156ccd9dde353157b6acfbe8690a90457791e438e544086ad26418cb', NULL, '2021-02-06 20:28:32', '2021-02-06 20:28:50'),
-(5, 'User A', 'usera@gmail.com', 'User A', '$2y$10$d/hpuSqYUwTRfQe6UgttuuRf8J2kl4PSEOfcGivQ/tOMVY6jW5VAC', 2, 1, NULL, NULL, '2021-02-06 20:29:52', '2021-02-06 20:29:52'),
-(6, 'User B', 'userb@gmail.com', 'User B', '$2y$10$QvyOn0GazO0zC.MM36x7Sexp6r/1.SjUE3CSToLcza8UqNg50DwEe', 2, 1, NULL, NULL, '2021-02-06 20:30:03', '2021-02-06 20:30:03');
+(1, 'Board A', 'boarda@gmail.com', 'Board A', '$2y$10$YVO8Ary1o1LCjXYTKee6WOgg9H4j34baoLYdIKokha.0Q5CCiFjii', 1, NULL, '09879c27f3d70463e713b1ce0aac769c1618bb82c986d98fe125cba87cd5e22b', NULL, '2021-02-06 20:11:33', '2021-02-08 04:06:31'),
+(4, 'Expert A', 'experta@gmail.com', 'Expert A', '$2y$10$1Gk7U.cnJDOvEP4bByyAjuFJXlvqGOilYAuzI5S45IrDCN83VfXRu', 2, NULL, NULL, NULL, '2021-02-06 20:28:32', '2021-02-08 04:06:16'),
+(5, 'User A', 'usera@gmail.com', 'User A', '$2y$10$d/hpuSqYUwTRfQe6UgttuuRf8J2kl4PSEOfcGivQ/tOMVY6jW5VAC', 4, 1, NULL, NULL, '2021-02-06 20:29:52', '2021-02-06 20:29:52'),
+(6, 'User B', 'userb@gmail.com', 'User B', '$2y$10$QvyOn0GazO0zC.MM36x7Sexp6r/1.SjUE3CSToLcza8UqNg50DwEe', 4, 1, NULL, NULL, '2021-02-06 20:30:03', '2021-02-08 00:44:56'),
+(7, 'Trainer A', 'trainera@gmail.com', 'Trainer A', '$2y$10$k9qduiEor8q6qiaXb8XpjuWLKiey3caOMr95UA6SSvEfjpmM.B0Mm', 3, 1, NULL, NULL, '2021-02-07 22:55:16', '2021-02-08 04:03:28'),
+(13, 'User C', 'userc@gmail.com', 'User C', '$2y$10$.q0xAqr9Gr8NiObAGs1DDeIvOW1LuHPSvDskyia3dvD1FmVeKpicS', 4, 2, NULL, NULL, '2021-02-08 03:00:21', '2021-02-08 03:00:21');
 
 --
 -- Indexes for dumped tables
@@ -189,7 +192,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -213,7 +216,7 @@ ALTER TABLE `skills`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

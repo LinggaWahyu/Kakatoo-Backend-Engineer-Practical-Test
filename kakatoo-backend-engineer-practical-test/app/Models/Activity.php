@@ -11,8 +11,8 @@ class Activity extends Model
     protected $casts = [
         'created_at' => 'datetime:Y-m-d H:m:s',
         'updated_at' => 'datetime:Y-m-d H:m:s',
-        'startdate' => 'datetime:Y-m-d H:m:s',
-        'enddate' => 'datetime:Y-m-d H:m:s',
+        'startdate' => 'datetime:Y-m-d',
+        'enddate' => 'datetime:Y-m-d',
         'participans' => 'array'
     ];
 
