@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\" : \"Expert A\",\n    \"password\" : \"expert123\"\n}",
+					"raw": "{\n    \"username\" : \"User B\",\n    \"password\" : \"user1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1547,7 +1547,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "VWHGRC7OX0PBOK8UNPBWDJOKMSKDO6",
+						"value": "B6UNRMIDE4M09IRZNRA7JC3Q8YFJOU",
 						"type": "text"
 					}
 				],
@@ -1720,6 +1720,82 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"message\": \"Unauthorized user\"\n}"
+				},
+				{
+					"name": "Get List of Activities Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "B6UNRMIDE4M09IRZNRA7JC3Q8YFJOU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activities/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activities",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 02:05:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 02:05:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"coding\",\n        \"title\": \"Belajar Coding\",\n        \"description\": \"Belajar membuat website dengan menggunakan framework laravel 8\",\n        \"startdate\": \"07 February 2020\",\n        \"enddate\": \"09 February 2020\",\n        \"participans\": [\n            {\n                \"id\": 5,\n                \"name\": \"User A\",\n                \"profile\": \"expert\",\n                \"skill\": \"coding\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"User B\",\n                \"profile\": \"expert\",\n                \"skill\": \"coding\"\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"coding\",\n        \"title\": \"Belajar Web\",\n        \"description\": \"Belajar membuat website dengan menggunakan framework code igniter\",\n        \"startdate\": \"08 February 2020\",\n        \"enddate\": \"10 February 2020\",\n        \"participans\": [\n            {\n                \"id\": 5,\n                \"name\": \"User A\",\n                \"profile\": \"expert\",\n                \"skill\": \"coding\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"User B\",\n                \"profile\": \"expert\",\n                \"skill\": \"coding\"\n            }\n        ]\n    }\n]"
 				}
 			]
 		},
@@ -1894,6 +1970,189 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"id\": 1,\n        \"skill_name\": \"coding\"\n    },\n    {\n        \"id\": 2,\n        \"skill_name\": \"desain grafis\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Data Login User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "PTLHHQFWGYUZ0VEZTZU7YACKGGW3QX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Data Login User Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "PTLHHQFWGYUZ0VEZTZU7YACKGGW3QX",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 01:16:00 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 01:16:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"User B\",\n        \"email\": \"userb@gmail.com\",\n        \"username\": \"User B\",\n        \"profile_id\": 2,\n        \"skill_id\": 1\n    }\n}"
+				},
+				{
+					"name": "Get Data Login User Error Auth",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "PTLHHQFWGYUZ0VEZTZU7YACKGGW3QXa",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 01:16:40 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Feb 2021 01:16:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.24-3+ubuntu18.04.1+deb.sury.org+1"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized user\"\n}"
 				}
 			]
 		}

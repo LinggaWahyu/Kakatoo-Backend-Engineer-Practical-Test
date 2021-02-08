@@ -19,6 +19,7 @@ Route::group([
 ], function ($router) {
     Route::post('/auth/login', [App\Http\Controllers\UserController::class, 'login'])->name('user-login')->withoutMiddleware('role:all');
     Route::get('/auth/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('user-logout');
+    Route::get('/auth/user', [App\Http\Controllers\UserController::class, 'show'])->name('user-profile');
 
     Route::get('/activities/{skill_id}', [App\Http\Controllers\ActivityController::class, 'index'])->name('activity-list');
 

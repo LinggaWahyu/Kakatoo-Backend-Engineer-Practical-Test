@@ -95,6 +95,20 @@ class UserController extends Controller
         ]);
     }
 
+    public function show(Request $request)
+    {
+        $token = hash('sha256', $request->header('Authorization'));
+        $user = User::where('api_token', $token)->first();
+
+        unset($user->api_token);
+        unset($user->created_at);
+        unset($user->updated_at);
+
+        return response()->json([
+            'data' => $user
+        ]);
+    }
+
     protected function guard()
     {
         return Auth::guard();
